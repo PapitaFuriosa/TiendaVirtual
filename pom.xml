@@ -19,10 +19,10 @@
 
     <properties>
         <java.version>17</java.version>
+        <start-class>repuestos.repuestoscloud.RepuestosCloudApplication</start-class>
     </properties>
 
     <dependencies>
-
         <!-- Web + Thymeleaf -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -32,6 +32,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <!-- ✅ NECESARIO para sec:authorize / #authorization -->
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity6</artifactId>
         </dependency>
 
         <!-- JPA + MySQL -->
@@ -72,13 +78,12 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- TESTS (correcto para Spring Boot 3) -->
+        <!-- TESTS -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>

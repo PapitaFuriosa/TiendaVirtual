@@ -1,0 +1,115 @@
+
+:root{
+    --bg:#0f172a;
+    --card:#111827;
+    --text:#e5e7eb;
+    --muted:#9ca3af;
+    --brand:#22c55e;
+    --brand2:#38bdf8;
+}
+body{
+    background:linear-gradient(180deg,#0b1224,#0f172a);
+    color:var(--text);
+    font-family:system-ui,Segoe UI,Roboto,Arial
+}
+.navbar{
+    background:rgba(17,24,39,.85)!important;
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,.06)
+}
+.page-wrap{
+    min-height:calc(100vh - 70px);
+    padding:30px 0
+}
+.page-title{
+    font-weight:800
+}
+.page-subtitle{
+    color:var(--muted)
+}
+.filter-bar{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:16px;
+    padding:14px
+}
+.product-card{
+    background:rgba(17,24,39,.8);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:18px;
+    overflow:hidden;
+    transition:.15s;
+    height:100%
+}
+.product-card:hover{
+    transform:translateY(-3px);
+    border-color:rgba(56,189,248,.35)
+}
+.product-img{
+    width:100%;
+    height:190px;
+    object-fit:cover
+}
+.product-body{
+    padding:14px 14px 16px
+}
+.product-name{
+    font-weight:700;
+    margin:0 0 6px
+}
+.product-muted{
+    color:var(--muted);
+    font-size:.92rem
+}
+.price{
+    font-weight:800;
+    font-size:1.05rem
+}
+.badge-stock{
+    background:rgba(34,197,94,.18);
+    border:1px solid rgba(34,197,94,.35);
+    color:#bbf7d0;
+    padding:6px 10px;
+    border-radius:999px;
+    font-size:.82rem
+}
+.badge-out{
+    background:rgba(239,68,68,.14);
+    border:1px solid rgba(239,68,68,.35);
+    color:#fecaca;
+    padding:6px 10px;
+    border-radius:999px;
+    font-size:.82rem
+}
+.btn-brand{
+    background:linear-gradient(90deg,var(--brand),#16a34a);
+    border:none;
+    color:#052e16;
+    font-weight:800
+}
+.btn-soft{
+    background:rgba(56,189,248,.12);
+    border:1px solid rgba(56,189,248,.35);
+    color:#e0f2fe;
+    font-weight:700
+}
+.btn-danger-soft{
+    background:rgba(239,68,68,.12);
+    border:1px solid rgba(239,68,68,.35);
+    color:#fee2e2;
+    font-weight:700
+}
+.table-darkish{
+    background:rgba(17,24,39,.75);
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.06)
+}
+.form-control,.form-select{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.10);
+    color:var(--text)
+}
+.form-control::placeholder{
+    color:rgba(229,231,235,.6)
+}

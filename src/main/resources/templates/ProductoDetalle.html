@@ -1,0 +1,43 @@
+<div th:with="title='Detalle', content=~{::section}"
+     th:replace="layout :: none"></div>
+
+<section>
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="product-card">
+        <img class="product-img" style="height:360px"
+             th:src="${p.rutaImagen} ?: 'https://via.placeholder.com/800x600?text=Producto'"
+             alt="Producto">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h1 class="page-title" th:text="${p.nombre}">Producto</h1>
+      <p class="page-subtitle">
+        <span th:text="${p.marca.nombre}"></span> · <span th:text="${p.tipo.nombre}"></span>
+      </p>
+
+      <div class="mb-3">
+        <span th:if="${p.stock > 0}" class="badge-stock">Disponible (Stock: <span th:text="${p.stock}"></span>)</span>
+        <span th:if="${p.stock == 0}" class="badge-out">Sin stock</span>
+      </div>
+
+      <h3 class="price mb-3">₡<span th:text="${p.precio}"></span></h3>
+
+      <p class="product-muted" th:text="${p.descripcion} ?: 'Sin descripción'"></p>
+
+      <div class="mt-3">
+        <h6 class="fw-bold">Compatibilidad</h6>
+        <p class="product-muted" th:text="${p.compatibilidad} ?: 'No indicada'"></p>
+      </div>
+
+      <div class="d-flex gap-2 mt-4">
+        <a class="btn btn-soft" th:href="@{/productos}">Volver</a>
+        <form th:action="@{/carrito/agregar}" method="post">
+          <input type="hidden" name="idProducto" th:value="${p.idProducto}">
+          <button class="btn btn-brand" th:disabled="${p.stock == 0}">Agregar al carrito</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
